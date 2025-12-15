@@ -15,8 +15,4 @@ vendor/
 .env
 .env.local
 *.env.*
-
-# Editors
-.vscode/
-.idea/
 ```
