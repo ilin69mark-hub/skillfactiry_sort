@@ -9,43 +9,42 @@ import (
 func TestSortingAlgorithms(t *testing.T) {
 	testData := []int{64, 34, 25, 12, 22, 11, 90}
 	expected := []int{11, 12, 22, 25, 34, 64, 90}
-	
+
 	// Test BubbleSort
 	result := BubbleSort(testData)
 	if !reflect.DeepEqual(result, expected) {
 		t.Errorf("BubbleSort failed. Expected %v, got %v", expected, result)
 	}
-	
+
 	// Test SelectionSort
 	result = SelectionSort(testData)
 	if !reflect.DeepEqual(result, expected) {
 		t.Errorf("SelectionSort failed. Expected %v, got %v", expected, result)
 	}
-	
+
 	// Test InsertionSort
 	result = InsertionSort(testData)
 	if !reflect.DeepEqual(result, expected) {
 		t.Errorf("InsertionSort failed. Expected %v, got %v", expected, result)
 	}
-	
+
 	// Test MergeSort
 	result = MergeSort(testData)
 	if !reflect.DeepEqual(result, expected) {
 		t.Errorf("MergeSort failed. Expected %v, got %v", expected, result)
 	}
-	
+
 	// Test QuickSort
 	result = QuickSort(testData)
 	if !reflect.DeepEqual(result, expected) {
 		t.Errorf("QuickSort failed. Expected %v, got %v", expected, result)
 	}
-	
+
 	// Verify original slice is unchanged
 	if !reflect.DeepEqual(testData, []int{64, 34, 25, 12, 22, 11, 90}) {
 		t.Error("Original slice was modified")
 	}
 }
-
 
 func BenchmarkBubbleSort(b *testing.B) {
 	b.ReportAllocs()
